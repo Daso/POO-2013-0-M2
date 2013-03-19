@@ -1,6 +1,8 @@
 
 package turismoepe;
 
+import java.util.ArrayList;
+
 public class TurismoEPE {
 
     public static void main(String[] args) {
@@ -18,5 +20,20 @@ public class TurismoEPE {
       
       turista04.calcularTarifa(7);
       System.out.println(turista04.getTarifa());
+      
+      Tour tour01 = new Tour("09");
+      tour01.agregarTurista(turista01);
+      tour01.agregarTurista(turista02);
+      tour01.agregarTurista(turista03);
+      
+      ArrayList<Turista> listaTuristas = tour01.getTuristas();
+      
+      for(Turista element: listaTuristas){
+                System.out.println(element.getNombre());
+          }
+      
+      tour01.tarifaTotal();
+      System.out.println(tour01.getTotal());
+      
     }
 }
